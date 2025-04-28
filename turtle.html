@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Epic Turtle</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#b2dfdb, #4db6ac);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .turtle {
+      position: absolute;
+      width: 220px;
+      height: 160px;
+      background: repeating-radial-gradient(
+        circle,
+        #2e7d32,
+        #2e7d32 10px,
+        #1b5e20 10px,
+        #1b5e20 20px
+      );
+      border-radius: 50% / 45%;
+      box-shadow: inset 0 0 10px #1b5e20, 0 5px 15px rgba(0,0,0,0.5);
+      animation: moveEpicTurtle 30s infinite linear;
+    }
+
+    .head {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #388e3c 40%, #2e7d32 100%);
+      border-radius: 50%;
+      top: 50px;
+      left: -35px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .eye {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: black;
+      border-radius: 50%;
+      top: 18px;
+    }
+
+    .eye.left {
+      left: 12px;
+    }
+    .eye.right {
+      left: 32px;
+    }
+
+    .eye .shine {
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+    }
+
+    .mouth {
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      border-bottom: 2px solid black;
+      border-radius: 0 0 10px 10px;
+      top: 38px;
+      left: 18px;
+    }
+
+    .tail {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #1b5e20;
+      border-radius: 50% 50% 0 50%;
+      bottom: 70px;
+      right: -10px;
+      transform: rotate(45deg);
+    }
+
+    .leg {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #1b5e20;
+      border-radius: 50%;
+      box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3);
+    }
+
+    .leg.front-left {
+      top: 5px;
+      left: 30px;
+    }
+    .leg.front-right {
+      top: 5px;
+      right: 30px;
+    }
+    .leg.back-left {
+      bottom: 5px;
+      left: 30px;
+    }
+    .leg.back-right {
+      bottom: 5px;
+      right: 30px;
+    }
+
+    @keyframes moveEpicTurtle {
+      0%   { transform: translate(0, 0) rotate(0deg); }
+      25%  { transform: translate(400px, 100px) rotate(15deg); }
+      50%  { transform: translate(200px, 300px) rotate(0deg); }
+      75%  { transform: translate(-200px, 150px) rotate(-15deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="turtle">
+    <div class="head">
+      <div class="eye left">
+        <div class="shine"></div>
+      </div>
+      <div class="eye right">
+        <div class="shine"></div>
+      </div>
+      <div class="mouth"></div>
+    </div>
+    <div class="tail"></div>
+    <div class="leg front-left"></div>
+    <div class="leg front-right"></div>
+    <div class="leg back-left"></div>
+    <div class="leg back-right"></div>
+  </div>
+</body>
+</html>
